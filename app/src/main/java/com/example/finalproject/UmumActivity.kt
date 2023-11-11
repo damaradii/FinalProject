@@ -3,34 +3,22 @@ package com.example.finalproject
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.FrameLayout
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class ChatActivity : AppCompatActivity() {
+class UmumActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_chat)
+        setContentView(R.layout.activity_umum)
 
-        //button umum
-        val btnumum : FrameLayout = findViewById(R.id.frame1)
+        //button back
+        val btnback : ImageView = findViewById(R.id.back)
 
-        btnumum.setOnClickListener {
-            val intent = Intent (this,UmumActivity::class.java)
+        btnback.setOnClickListener {
+            val intent = Intent (this,ChatActivity::class.java)
             startActivity(intent)
         }
-
-        //button gigi
-        val btngigi : FrameLayout = findViewById(R.id.frame2)
-
-        btngigi.setOnClickListener {
-            val intent = Intent (this,GigiActivity::class.java)
-            startActivity(intent)
-        }
-
-
 
         //reycle
         val rvDokter: RecyclerView = findViewById(R.id.recyclerViewBuku)
@@ -47,7 +35,5 @@ class ChatActivity : AppCompatActivity() {
         //set adapter
         rvDokter.adapter = adapter
 
-
     }
-
 }
