@@ -3,4 +3,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="ijo_tuo">#2C6764</color>
+    <color name="colorButtonNormal">#FF6200EA</color>
+    <color name="colorButtonPressed">#FF3700B3</color>
 </resources>

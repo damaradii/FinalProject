@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FinalProject"
         tools:targetApi="31">
         <activity
+            android:name=".ChatDokterActivity"
+            android:exported="false" />
+        <activity
             android:name=".GigiActivity"
             android:exported="false" />
         <activity

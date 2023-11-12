@@ -3,6 +3,7 @@ package com.example.finalproject
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +21,7 @@ class UmumActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         //reycle
         val rvDokter: RecyclerView = findViewById(R.id.recyclerViewBuku)
         //set layout
@@ -31,9 +33,13 @@ class UmumActivity : AppCompatActivity() {
         data.add(DokterModel(R.drawable.dokter,"Dr. Siti", "Spesialis Kulit", "11 Tahun", "99%", "Rp 50.000"))
         data.add(DokterModel(R.drawable.dokter,"Dr. Suli", "Spesialis kandungan", "14 Tahun", "97%", "Rp 50.000"))
         //set adpater
-        val adapter = AdapterChat(data)
+        val adapter = AdapterChat(data) {DataDokter ->
+            Intent(this, ChatDokterActivity::class.java).apply {
+                putExtra("DokterModel", DataDokter)
+                startActivity(this)
+            }
+        }
         //set adapter
         rvDokter.adapter = adapter
-
     }
 }
