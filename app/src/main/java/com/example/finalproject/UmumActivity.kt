@@ -33,13 +33,9 @@ class UmumActivity : AppCompatActivity() {
         data.add(DokterModel(R.drawable.dokter,"Dr. Siti", "Spesialis Kulit", "11 Tahun", "99%", "Rp 50.000"))
         data.add(DokterModel(R.drawable.dokter,"Dr. Suli", "Spesialis kandungan", "14 Tahun", "97%", "Rp 50.000"))
         //set adpater
-        val adapter = AdapterChat(data) {DataDokter ->
-            Intent(this, ChatDokterActivity::class.java).apply {
-                putExtra("DokterModel", DataDokter)
-                startActivity(this)
-            }
-        }
+        val adapter = AdapterChat(data)
         //set adapter
         rvDokter.adapter = adapter
+
     }
 }

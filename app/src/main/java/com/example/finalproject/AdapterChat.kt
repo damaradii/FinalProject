@@ -10,7 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
-class AdapterChat  (private val listDokter:List<DokterModel>, private val listerner: (DokterModel) -> Unit): RecyclerView.Adapter<AdapterChat.ViewHolder>() {
+class AdapterChat  (private val listDokter:List<DokterModel>): RecyclerView.Adapter<AdapterChat.ViewHolder>() {
 
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView){
         val image: ImageView = itemView.findViewById(R.id.imageDokter)
@@ -30,9 +30,7 @@ class AdapterChat  (private val listDokter:List<DokterModel>, private val lister
 
     override fun onBindViewHolder(holder: AdapterChat.ViewHolder, position: Int) {
         val modelDokter = listDokter[position]
-        holder.itemView.setOnClickListener{
-            listerner(listDokter[position])
-        }
+
 
         holder.image.setImageResource(modelDokter.image)
         holder.nama.text = modelDokter.nama
